@@ -7,4 +7,6 @@ Problem 2: Writer-priority Readers–Writers
 Problem 3: Dining Philosophers Solution #1
 <img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/94f2536c-2e0f-4f65-a0d5-7be8d6ff9b95" />
 
+Problem 4: Dining Philosophers Solution #2
+<img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/8ee5b7ed-1e4d-425c-b0c9-0d59fb48c7ed" />
 
