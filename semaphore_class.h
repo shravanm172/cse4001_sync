@@ -1,45 +1,33 @@
-#include <unistd.h>     /* Symbolic Constants */
-#include <sys/types.h>  /* Primitive System Data Types */
-#include <errno.h>      /* Errors */
-#include <stdio.h>      /* Input/Output */
-#include <stdlib.h>     /* General Utilities */
-#include <pthread.h>    /* POSIX Threads */
-#include <string.h>     /* String handling */
-#include <semaphore.h>  /* Semaphore */
-#include <iostream>
-using namespace std;
+// semaphore_class.h
+#ifndef SEMAPHORE_CLASS_H
+#define SEMAPHORE_CLASS_H
 
-/*
- This wrapper class for semaphore.h functions is from:
- http://stackoverflow.com/questions/2899604/using-sem-t-in-a-qt-project
- */
+#include <semaphore.h>
+
 class Semaphore {
 public:
     // Constructor
-    Semaphore(int initialValue)
-    {
+    Semaphore(int initialValue) {
         sem_init(&mSemaphore, 0, initialValue);
     }
+
     // Destructor
-    ~Semaphore()
-    {
-        sem_destroy(&mSemaphore); /* destroy semaphore */
+    ~Semaphore() {
+        sem_destroy(&mSemaphore);
     }
-    
+
     // wait
-    void wait()
-    {
+    void wait() {
         sem_wait(&mSemaphore);
     }
+
     // signal
-    void signal()
-    {
+    void signal() {
         sem_post(&mSemaphore);
     }
-    
-    
+
 private:
     sem_t mSemaphore;
 };
 
-
+#endif
